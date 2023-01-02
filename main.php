@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <link href="https://fonts.googleapis.com/css?family=M+PLUS+Rounded+1c&display=swap" rel="stylesheet">
 
-    <title>Live Caption and Translation</title>
+    <title>Live Captions</title>
 
     <style type="text/css">
         @font-face{
