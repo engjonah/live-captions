@@ -165,7 +165,7 @@
             // API用設定 ---------------------------
             var request = new XMLHttpRequest();
             
-            var num_characters = Math.round(window.innerWidth/87);
+            var num_characters = Math.floor(window.innerWidth/87);
             //text size to width per character
             //50 - 69
             //60 - 80
