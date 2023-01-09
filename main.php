@@ -165,7 +165,11 @@
             // API用設定 ---------------------------
             var request = new XMLHttpRequest();
             
-            var num_characters = Math.round(window.innerWidth/69);
+            var num_characters = Math.round(window.innerWidth/87);
+            //text size to width per character
+            //50 - 69
+            //60 - 80
+            //65 - 87
 
             // 認識結果が返ってきたとき ------------------
             recognition.onresult = function(event) {
