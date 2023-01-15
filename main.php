@@ -105,7 +105,7 @@
             window.SpeechRecognition = window.SpeechRecognition || webkitSpeechRecognition;
             // 音声認識用設定 ----------------------
             var recognition = new webkitSpeechRecognition();
-            recognition.lang = 'ja';
+            recognition.lang = 'zh-TW';
             recognition.interimResults = true;
             recognition.continuous = false;
             var recog_text = '';
