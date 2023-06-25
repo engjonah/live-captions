@@ -177,7 +177,7 @@
                 //console.log(results);
                 for (var i = event.resultIndex; i < results.length; i++) {
                     recog_text = results[i][0].transcript;
-                    recog_text = recog_text.replace(/[^A-Za-z]/g, '');
+                    recog_text = recog_text.replace(/[A-Za-z]/g, '');
 
                     if (results[i].isFinal)
                     {
