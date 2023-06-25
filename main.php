@@ -176,16 +176,23 @@
                 var results = event.results;
                 //console.log(results);
                 for (var i = event.resultIndex; i < results.length; i++) {
+                    recog_text = results[i][0].transcript;
+                    recog_text = recog_text.replace(/[^A-Za-z]/g, '');
+
                     if (results[i].isFinal)
                     {
                         //-(1*num_characters)-results[i][0].transcript.length%num_characters
                         //1 row of characters "history" + moving last line. 
                         //adjust to only 1 moving last line? 
-                        if (results[i][0].transcript.length%num_characters==0) {
-                            recog_text = results[i][0].transcript.substr(-num_characters*2);
+
+                        //remove english characters
+                        
+
+                        if (recog_text.length%num_characters==0) {
+                            recog_text = recog_text.substr(-num_characters*2);
                         }
                         else {
-                            recog_text = results[i][0].transcript.substr(-num_characters*1-results[i][0].transcript.length%num_characters);
+                            recog_text = recog_text.substr(-num_characters*1-recog_text.length%num_characters);
                         }
 
                         document.getElementById('speech_text-imb').innerHTML = recog_text;
@@ -217,11 +224,11 @@
                     }
                     else
                     {
-                        if (results[i][0].transcript.length%num_characters==0) {
-                            recog_text = results[i][0].transcript.substr(-num_characters*2);
+                        if (recog_text.length%num_characters==0) {
+                            recog_text = recog_text.substr(-num_characters*2);
                         }
                         else {
-                            recog_text = results[i][0].transcript.substr(-num_characters*1-results[i][0].transcript.length%num_characters);
+                            recog_text = recog_text.substr(-num_characters*1-recog_text.length%num_characters);
                         }
                         document.getElementById('speech_text-imb').innerHTML = recog_text;
                         document.getElementById('speech_text-bg').innerHTML = recog_text;
